@@ -8,4 +8,4 @@ Preventing things like this - https://blog.hootsuite.com/how-to-use-utm-paramete
 
 
 # Notes 
-Made with simple HTML, JS, and TailwindCSS. 
+Made with simple HTML, JS, and TailwindCSS as an honors option project for SRA 472.
