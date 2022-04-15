@@ -8,11 +8,11 @@ browser.storage.local.get().then(function (result) {
     // do the same with the clean link
     // WHAT!?
     no_tracker_link.addEventListener("click", () => {
-        console.log("listener is listening")
+        console.log("clicked")
         console.log(result.clean_link)
+
         // send a message to content script to replace contents of page
-        
-        // browser.tabs.sendMessage()
+        browser.runtime.sendMessage({ "location": "from popup", "clean_link": result.clean_link });
 
     })
 

@@ -8,12 +8,22 @@
     if not, do nothing. 
 */
 
-function notifyExtension(tracker_amt) {
-    browser.runtime.sendMessage({ "trackers": tracker_amt });
+browser.runtime.onMessage.addListener(action);
+
+function action(message) {
+    console.log("content recieved msg: " + message)
+    let clean_link = message.clean_link
+    console.log(clean_link)
+
+    // redirect to clean
+    // window.location.replace(clean_link)
+    window.open("https://" + clean_link, '_blank', 'noreferrer=true');
 }
 
-url_check = window.location.href
+// DOESNT WORK UNLESS YOU LEAVE THE CHECK IN?
+browser.runtime.onMessage.hasListener(action)
 
+url_check = window.location.href
 
 // check for URL parameters
 if (url_check.includes('?')) {
@@ -32,12 +42,10 @@ if (url_check.includes('?')) {
         console.error(error)
     }
 
-    notifyExtension(tracker_amt)
 
 } else {
     // do nothing.
     console.log("ok")
     browser.storage.local.set({ trackers: 0, clean_link: window.location.hostname + window.location.pathname });
-
 }
 
