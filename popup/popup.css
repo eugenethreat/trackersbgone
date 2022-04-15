@@ -1,0 +1,33 @@
+/* https://coolors.co/bffff1-7cffcb-74f2ce-379634-0a3200 */
+
+/* for changing popup width */
+
+html, body {
+    width: 300px;
+    height: 250px;
+    background-color: #4C5B5C;
+}
+
+#content{
+    margin-top: 1rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2rem;
+}
+
+#counters{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#no_tracker_button {
+    text-align: center;
+
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+

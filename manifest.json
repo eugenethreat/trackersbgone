@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "trackersbgone",
+    "version": "0.1",
+    "description": "Removes those pesky URL parameters.",
+    "icons": {},
+    "browser_action": {
+        "default_icon": "icons/cat.webp",
+        "default_title": "trackersbgone",
+        "default_popup": "popup/popup.html"
+    },
+    "permissions": [
+        "storage",
+        "webNavigation"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.nytimes.com/*",
+                "<all_urls>"
+            ],
+            "js": [
+                "remove.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    }
+}

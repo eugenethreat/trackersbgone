@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+
+
+<head>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="popup.css">
+    <!-- tailwind -->
+    <!-- https://cdnjs.com/libraries/tailwindcss -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div id="content">
+        <h2 class="text-3xl font-bold underline">
+            Trackers B Gone!
+        </h2>
+
+        <div id="counters">
+            <h3 class="text-6xl" id="trackers_counter">0</h3>
+            <h4 id="tracker_text">trackers found on this site.</h4>
+        </div>
+
+        <button id="no_tracker_button"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            <a id="no_tracker_link">Take me to safety!</a>
+        </button>
+
+        <!-- our js  -->
+        <script src="popup.js"></script>
+
+    </div>
+</body>
+
+</html>
