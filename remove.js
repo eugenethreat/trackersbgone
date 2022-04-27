@@ -29,6 +29,13 @@ url_check = window.location.href
 if (url_check.includes('?')) {
     console.log("yuck!")
 
+    // cookies?
+    cookies = document.cookie
+    // a string 
+    cookies_col = cookies.split(";")
+    console.log(cookies_col)
+    console.log(cookies_col.length)
+
     // get the amount of url parameters
     trackers = window.location.search.split("&")
     let tracker_amt = trackers.length
@@ -36,7 +43,11 @@ if (url_check.includes('?')) {
 
     // write amt of params to storage
     try {
+        // trackers 
         browser.storage.local.set({ trackers: tracker_amt, clean_link: window.location.hostname + window.location.pathname });
+        // cookies
+        browser.storage.local.set({ cookies: cookies_col.length });
+
     } catch (error) {
         console.error("error!")
         console.error(error)
@@ -47,5 +58,6 @@ if (url_check.includes('?')) {
     // do nothing.
     console.log("ok")
     browser.storage.local.set({ trackers: 0, clean_link: window.location.hostname + window.location.pathname });
+    browser.storage.local.set({ cookies: "" });
 }
 

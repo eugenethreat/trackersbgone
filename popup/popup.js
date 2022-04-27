@@ -5,6 +5,9 @@ browser.storage.local.get().then(function (result) {
     let trackers_counter = document.querySelector("#trackers_counter")
     trackers_counter.innerHTML = result.trackers
 
+    let cookies_counter = document.querySelector("#cookies_counter")
+    cookies_counter.innerHTML = result.cookies
+
     // do the same with the clean link
     // WHAT!?
     no_tracker_link.addEventListener("click", () => {
